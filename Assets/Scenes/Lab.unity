@@ -344,8 +344,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  launch: 0.9
-  launchDuration: 0.5
+  launch: 0.7
+  launchDuration: 0.6
 --- !u!136 &302498119
 CapsuleCollider:
   m_ObjectHideFlags: 0

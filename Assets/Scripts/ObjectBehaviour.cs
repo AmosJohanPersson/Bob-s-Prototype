@@ -31,7 +31,15 @@ public class ObjectBehaviour : MonoBehaviour
     {
         timeSinceInteract += Time.deltaTime;
         float interpolation = (launchDuration - timeSinceInteract) / launchDuration;
-        Vector3 direction = (target - transform.position) + Vector3.up * launch * upCurve.Evaluate(interpolation);
-        rigid.MovePosition(transform.position + direction.normalized * speed * Time.deltaTime);
+        Vector3 direction = (target - transform.position) + launch * upCurve.Evaluate(interpolation) * Vector3.up;
+        Vector3 translation = speed * Time.deltaTime * direction.normalized;
+        if (Vector3.Magnitude(translation) < Vector3.Distance(transform.position, target))
+        {
+            rigid.MovePosition(transform.position + translation);
+        }
+        else
+        {
+            rigid.MovePosition(target);
+        }
     }
 }
