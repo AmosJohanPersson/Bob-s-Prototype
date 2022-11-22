@@ -31,6 +31,7 @@ public class ObjectBehaviour : MonoBehaviour
         timeSinceInteract = 0;
         state = ObjectInteractionState.put;
         moveTarget = transform;
+        originRotation = transform.rotation;
     }
 
     private void Update()
