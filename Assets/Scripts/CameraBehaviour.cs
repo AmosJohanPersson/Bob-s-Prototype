@@ -49,7 +49,7 @@ public class CameraBehaviour : MonoBehaviour
 
     private void HandleMovement()
     {
-        cam.transform.position = transform.position + camOffset;
+        cam.transform.position = transform.position + Get2DRotation() * camOffset;
     }
 
     public Quaternion Get2DRotation()

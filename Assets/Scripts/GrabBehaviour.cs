@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class GrabBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject handPoint;
+    [SerializeField] GameObject markerPrefab;
 
     private Camera cam;
+    private ObjectBehaviour carried;
     private bool isCarrying;
 
     private void Start()
@@ -25,8 +27,17 @@ public class GrabBehaviour : MonoBehaviour
 
         if (didHit && other.CompareTag("Grabbable") && !isCarrying)
         {
-            other.GetComponent<ObjectBehaviour>().PickUp(handPoint.transform.position);
+            carried = other.GetComponent<ObjectBehaviour>();
+            carried.PickUp(handPoint.transform);
             isCarrying = true;
+        }
+        else if (didHit && other.CompareTag("Surface") && isCarrying)
+        {
+            var position = hit.point;
+            GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
+            carried.PutDown(destination.transform);
+            isCarrying = false;
+            Destroy(destination, 5);
         }
     }
 }
