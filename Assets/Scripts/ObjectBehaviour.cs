@@ -19,74 +19,82 @@ public class ObjectBehaviour : MonoBehaviour
     [SerializeField] private float launch;
     [SerializeField] private float launchDuration;
 
-    private Vector3 origin;
-    private Vector3 moveTarget;
+    private Transform moveTarget;
     private Rigidbody rigid;
-    private float timeSinceInteract;
     private ObjectInteractionState state;
+    private Quaternion originRotation;
+    private float timeSinceInteract;
 
     private void Start()
     {
-        origin = transform.position;
         rigid = GetComponent<Rigidbody>();
         timeSinceInteract = 0;
         state = ObjectInteractionState.put;
-        moveTarget = origin;
+        moveTarget = transform;
     }
 
     private void Update()
     {
-        HandleMovement(moveTarget);
+        HandleMovement();
     }
 
-    private void HandleMovement(Vector3 target)
+    private void HandleMovement()
     {
         timeSinceInteract += Time.deltaTime;
-
         switch (state)
         {
             case ObjectInteractionState.up:
-                float interpolation = (launchDuration - timeSinceInteract) / launchDuration;
-                Vector3 direction = (target - transform.position) + launch * upCurve.Evaluate(interpolation) * Vector3.up;
-                Vector3 translation = speed * Time.deltaTime * direction.normalized;
-
-                if (Vector3.Magnitude(translation) < Vector3.Distance(transform.position, target))
-                {
-                    rigid.MovePosition(transform.position + translation);
-                }
-                else
-                {
-                    rigid.MovePosition(target);
+                rigid.MovePosition(moveTarget.position);
+                if (Vector3.Distance(transform.position, moveTarget.position) < 0.1)
                     state = ObjectInteractionState.held;
-                }
+                transform.parent = moveTarget;
                 break;
+            //float interpolation = (launchDuration - timeSinceInteract) / launchDuration;
+            //Vector3 direction = (moveTarget.position - transform.position) + launch * upCurve.Evaluate(interpolation) * Vector3.up;
+            //Vector3 translation = speed * Time.deltaTime * direction.normalized;
+
+            //if (Vector3.Magnitude(translation) < Vector3.Distance(transform.position, moveTarget.position))
+            //{
+            //    rigid.MovePosition(transform.position + translation);
+            //}
+            //else
+            //{
+            //    rigid.MovePosition(moveTarget.position);
+            //    state = ObjectInteractionState.held;
+            //    transform.parent = moveTarget;
+            //}
             case ObjectInteractionState.held:
-                //move with player
                 break;
             case ObjectInteractionState.down:
+                rigid.MovePosition(moveTarget.position);
+                if (Vector3.Distance(transform.position, moveTarget.position) < 0.1)
+                    state = ObjectInteractionState.put;
+                    transform.rotation = originRotation;
                 break;
             case ObjectInteractionState.put:
                 break;
         }
     }
 
-    public void PickUp(Vector3 targetPosition)
+    public void PickUp(Transform target)
     {
         if (state == ObjectInteractionState.put)
         {
             timeSinceInteract = 0;
             state = ObjectInteractionState.up;
-            moveTarget = targetPosition;
+            moveTarget = target;
         }
     }
 
-    public void PutDown(Vector3 targetPosition)
+    public void PutDown(Transform target)
     {
         if (state == ObjectInteractionState.held)
         {
+            target.Translate(new Vector3(0, GetComponent<Collider>().bounds.extents.y, 0));
             timeSinceInteract = 0;
             state = ObjectInteractionState.down;
-            moveTarget = targetPosition;
+            transform.parent = null;
+            moveTarget = target;
         }
     }
 }
