@@ -34,10 +34,15 @@ public class GrabBehaviour : MonoBehaviour
         else if (didHit && other.CompareTag("Surface") && isCarrying)
         {
             var position = hit.point;
+            if (carried.IsCloseEnough(position)) 
+            {
+                position = carried.GetGoalPosition();
+                position.y = hit.point.y;
+            }
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 5);
+            Destroy(destination, 2);
         }
     }
 }

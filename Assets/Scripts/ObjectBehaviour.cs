@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 enum ObjectInteractionState
 {
@@ -11,24 +12,24 @@ enum ObjectInteractionState
 public class ObjectBehaviour : MonoBehaviour
 {
 
-    [SerializeField] private Camera cam;
+    //[SerializeField] private float speed;
+    //[SerializeField] private AnimationCurve upCurve;
+    //[SerializeField] private float launch;
+    //[SerializeField] private float launchDuration;
+    //private float timeSinceInteract;
+    [Header("Goal")]
     [SerializeField] private float tolerance;
-    [SerializeField] private float speed;
-
-    [SerializeField] private AnimationCurve upCurve;
-    [SerializeField] private float launch;
-    [SerializeField] private float launchDuration;
+    [SerializeField] DecalProjector goalProjector;
 
     private Transform moveTarget;
     private Rigidbody rigid;
     private ObjectInteractionState state;
     private Quaternion originRotation;
-    private float timeSinceInteract;
 
     private void Start()
     {
+        //timeSinceInteract = 0;
         rigid = GetComponent<Rigidbody>();
-        timeSinceInteract = 0;
         state = ObjectInteractionState.put;
         moveTarget = transform;
         originRotation = transform.rotation;
@@ -37,18 +38,19 @@ public class ObjectBehaviour : MonoBehaviour
     private void Update()
     {
         HandleMovement();
+        
     }
 
     private void HandleMovement()
     {
-        timeSinceInteract += Time.deltaTime;
+        //timeSinceInteract += Time.deltaTime;
         switch (state)
         {
             case ObjectInteractionState.up:
                 rigid.MovePosition(moveTarget.position);
-                if (Vector3.Distance(transform.position, moveTarget.position) < 0.1)
+                if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                     state = ObjectInteractionState.held;
-                transform.parent = moveTarget;
+                    transform.parent = moveTarget;
                 break;
             //float interpolation = (launchDuration - timeSinceInteract) / launchDuration;
             //Vector3 direction = (moveTarget.position - transform.position) + launch * upCurve.Evaluate(interpolation) * Vector3.up;
@@ -68,7 +70,7 @@ public class ObjectBehaviour : MonoBehaviour
                 break;
             case ObjectInteractionState.down:
                 rigid.MovePosition(moveTarget.position);
-                if (Vector3.Distance(transform.position, moveTarget.position) < 0.1)
+                if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                     state = ObjectInteractionState.put;
                     transform.rotation = originRotation;
                 break;
@@ -77,11 +79,18 @@ public class ObjectBehaviour : MonoBehaviour
         }
     }
 
+    private float CalculateErrorDistance(Vector3 position)
+    {
+        Vector3 position2D = new Vector3(position.x, 0, position.z);
+        Vector3 goal2D = new Vector3(goalProjector.transform.position.x, 0, goalProjector.transform.position.z);
+        return Vector3.Distance(position2D, goal2D);
+    }
+
     public void PickUp(Transform target)
     {
         if (state == ObjectInteractionState.put)
         {
-            timeSinceInteract = 0;
+            //timeSinceInteract = 0;
             state = ObjectInteractionState.up;
             moveTarget = target;
         }
@@ -91,11 +100,25 @@ public class ObjectBehaviour : MonoBehaviour
     {
         if (state == ObjectInteractionState.held)
         {
+            //timeSinceInteract = 0;
             target.Translate(new Vector3(0, GetComponent<Collider>().bounds.extents.y, 0));
-            timeSinceInteract = 0;
             state = ObjectInteractionState.down;
             transform.parent = null;
             moveTarget = target;
         }
+    }
+
+    public bool IsCloseEnough(Vector3 target)
+    {
+        if (goalProjector != null)
+        {
+            return CalculateErrorDistance(target) < tolerance;
+        }
+        return false;
+    }
+
+    public Vector3 GetGoalPosition()
+    {
+        return goalProjector.transform.position;
     }
 }
