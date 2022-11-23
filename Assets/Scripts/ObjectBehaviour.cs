@@ -18,8 +18,9 @@ public class ObjectBehaviour : MonoBehaviour
     //[SerializeField] private float launchDuration;
     //private float timeSinceInteract;
     [Header("Goal")]
+    [SerializeField] GameObject goalObject;
+    [Tooltip("Maximum snap-to distance. Not used if goal has a collider component.")]
     [SerializeField] private float tolerance;
-    [SerializeField] DecalProjector goalProjector;
 
     private Transform moveTarget;
     private Rigidbody rigid;
@@ -82,7 +83,7 @@ public class ObjectBehaviour : MonoBehaviour
     private float CalculateErrorDistance(Vector3 position)
     {
         Vector3 position2D = new Vector3(position.x, 0, position.z);
-        Vector3 goal2D = new Vector3(goalProjector.transform.position.x, 0, goalProjector.transform.position.z);
+        Vector3 goal2D = new Vector3(goalObject.transform.position.x, 0, goalObject.transform.position.z);
         return Vector3.Distance(position2D, goal2D);
     }
 
@@ -110,7 +111,11 @@ public class ObjectBehaviour : MonoBehaviour
 
     public bool IsCloseEnough(Vector3 target)
     {
-        if (goalProjector != null)
+        if (goalObject != null && goalObject.GetComponent<Collider>() != null)
+        {
+            return goalObject.GetComponent<Collider>().bounds.Contains(target);
+        }
+        else if (goalObject != null)
         {
             return CalculateErrorDistance(target) < tolerance;
         }
@@ -119,6 +124,6 @@ public class ObjectBehaviour : MonoBehaviour
 
     public Vector3 GetGoalPosition()
     {
-        return goalProjector.transform.position;
+        return goalObject.transform.position;
     }
 }
