@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeskManager : MonoBehaviour
 {
     [SerializeField] private List<ObjectBehaviour> objectives;
+    [SerializeField] private UIHandler UI;
 
     private static DeskManager instance;
 
@@ -18,6 +19,11 @@ public class DeskManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        UI.UpdateUI(0, objectives.Count);
     }
 
     private static DeskManager GetInstance()
@@ -37,5 +43,6 @@ public class DeskManager : MonoBehaviour
         {
             Debug.Log("You did it!");
         }
+        DM.UI.UpdateUI(correct, DM.objectives.Count);
     }
 }
