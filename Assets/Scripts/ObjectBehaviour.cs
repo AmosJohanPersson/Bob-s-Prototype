@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 enum ObjectInteractionState
 {
@@ -77,6 +76,7 @@ public class ObjectBehaviour : MonoBehaviour
         {
             state = ObjectInteractionState.up;
             moveTarget = target;
+            ShowGoal(true);
         }
     }
 
@@ -88,23 +88,40 @@ public class ObjectBehaviour : MonoBehaviour
             state = ObjectInteractionState.down;
             transform.parent = null;
             moveTarget = target;
+            ShowGoal(false);
         }
     }
 
     public bool IsPointCloseToGoal(Vector3 target)
     {
-        if (goalObject != null && goalObject.GetComponent<Collider>() != null)
+        if (goalObject == null) return false;
+
+        var collider = goalObject.GetComponent<Collider>();
+        if (collider != null)
         {
-            Debug.Log(goalObject.GetComponent<Collider>().bounds.Contains(target));
-            return goalObject.GetComponent<Collider>().bounds.Contains(target);
+            return collider.bounds.Contains(target);
         }
-        else if (goalObject != null)
+        else
         {
             return CalculateErrorDistance(target) < tolerance;
         }
-        return false;
     }
 
+    private void ShowGoal(bool show)
+    {
+        if (goalObject == null) return;
+        var particles = goalObject.GetComponent<ParticleSystem>();
+        if (particles == null) return;
+
+        if(show)
+        {
+            particles.Play();
+        }
+        else
+        {
+            particles.Stop();
+        }
+    }
     public bool InCorrectSpot()
     {
         return IsPointCloseToGoal(transform.position);

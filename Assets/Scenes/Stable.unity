@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1645,17 +1645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &567666269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2227,17 +2218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &672197004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2721,17 +2703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!135 &810983662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3114,17 +3087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &860154656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3274,17 +3238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &957891340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3503,17 +3458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!54 &997206979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4208,17 +4154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &1082863787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4552,17 +4489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!135 &1173519575
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5357,17 +5285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!135 &1260037218
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6261,17 +6180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!135 &1470607375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7067,17 +6977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!1 &1592655551
 GameObject:
   m_ObjectHideFlags: 0
@@ -7209,6 +7110,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1598741763}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1602326726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1602326728}
+  - component: {fileID: 1602326727}
+  m_Layer: 0
+  m_Name: DeskManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1602326727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602326726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6cee1774b21c14c90124ede7a3c12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives: []
+--- !u!4 &1602326728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602326726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21142098, y: 2.7409644, z: -0.629658}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604866355
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,17 +9168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &2001210417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9904,17 +9841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &2070990868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10145,17 +10073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 101734130}
+  goalObject: {fileID: 0}
   tolerance: 0
-  speed: 4
-  upCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  launch: 0
-  launchDuration: 0
 --- !u!65 &2075083836
 BoxCollider:
   m_ObjectHideFlags: 0
