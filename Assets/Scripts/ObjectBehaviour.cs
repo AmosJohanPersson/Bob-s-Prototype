@@ -11,12 +11,6 @@ enum ObjectInteractionState
 
 public class ObjectBehaviour : MonoBehaviour
 {
-
-    //[SerializeField] private float speed;
-    //[SerializeField] private AnimationCurve upCurve;
-    //[SerializeField] private float launch;
-    //[SerializeField] private float launchDuration;
-    //private float timeSinceInteract;
     [Header("Goal")]
     [SerializeField] GameObject goalObject;
     [Tooltip("Maximum snap-to distance. Not used if goal has a collider component.")]
@@ -29,11 +23,11 @@ public class ObjectBehaviour : MonoBehaviour
 
     private void Start()
     {
-        //timeSinceInteract = 0;
         rigid = GetComponent<Rigidbody>();
         state = ObjectInteractionState.put;
         moveTarget = transform;
         originRotation = transform.rotation;
+
     }
 
     private void Update()
@@ -44,36 +38,26 @@ public class ObjectBehaviour : MonoBehaviour
 
     private void HandleMovement()
     {
-        //timeSinceInteract += Time.deltaTime;
         switch (state)
         {
             case ObjectInteractionState.up:
                 rigid.MovePosition(moveTarget.position);
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
+                {
                     state = ObjectInteractionState.held;
                     transform.parent = moveTarget;
+                }
                 break;
-            //float interpolation = (launchDuration - timeSinceInteract) / launchDuration;
-            //Vector3 direction = (moveTarget.position - transform.position) + launch * upCurve.Evaluate(interpolation) * Vector3.up;
-            //Vector3 translation = speed * Time.deltaTime * direction.normalized;
-
-            //if (Vector3.Magnitude(translation) < Vector3.Distance(transform.position, moveTarget.position))
-            //{
-            //    rigid.MovePosition(transform.position + translation);
-            //}
-            //else
-            //{
-            //    rigid.MovePosition(moveTarget.position);
-            //    state = ObjectInteractionState.held;
-            //    transform.parent = moveTarget;
-            //}
             case ObjectInteractionState.held:
                 break;
             case ObjectInteractionState.down:
                 rigid.MovePosition(moveTarget.position);
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
+                {
                     state = ObjectInteractionState.put;
                     transform.rotation = originRotation;
+                    DeskManager.UpdateTask();
+                }
                 break;
             case ObjectInteractionState.put:
                 break;
@@ -91,7 +75,6 @@ public class ObjectBehaviour : MonoBehaviour
     {
         if (state == ObjectInteractionState.put)
         {
-            //timeSinceInteract = 0;
             state = ObjectInteractionState.up;
             moveTarget = target;
         }
@@ -101,7 +84,6 @@ public class ObjectBehaviour : MonoBehaviour
     {
         if (state == ObjectInteractionState.held)
         {
-            //timeSinceInteract = 0;
             target.Translate(new Vector3(0, GetComponent<Collider>().bounds.extents.y, 0));
             state = ObjectInteractionState.down;
             transform.parent = null;
@@ -109,10 +91,11 @@ public class ObjectBehaviour : MonoBehaviour
         }
     }
 
-    public bool IsCloseEnough(Vector3 target)
+    public bool IsPointCloseToGoal(Vector3 target)
     {
         if (goalObject != null && goalObject.GetComponent<Collider>() != null)
         {
+            Debug.Log(goalObject.GetComponent<Collider>().bounds.Contains(target));
             return goalObject.GetComponent<Collider>().bounds.Contains(target);
         }
         else if (goalObject != null)
@@ -120,6 +103,11 @@ public class ObjectBehaviour : MonoBehaviour
             return CalculateErrorDistance(target) < tolerance;
         }
         return false;
+    }
+
+    public bool InCorrectSpot()
+    {
+        return IsPointCloseToGoal(transform.position);
     }
 
     public Vector3 GetGoalPosition()

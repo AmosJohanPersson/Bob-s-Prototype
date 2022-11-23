@@ -34,7 +34,7 @@ public class GrabBehaviour : MonoBehaviour
         else if (didHit && other.CompareTag("Surface") && isCarrying)
         {
             var position = hit.point;
-            if (carried.IsCloseEnough(position)) 
+            if (carried.IsPointCloseToGoal(position)) 
             {
                 position = carried.GetGoalPosition();
                 position.y = hit.point.y;
