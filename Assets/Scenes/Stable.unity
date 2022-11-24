@@ -7140,6 +7140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: []
+  UI: {fileID: 0}
 --- !u!4 &1602326728
 Transform:
   m_ObjectHideFlags: 0
