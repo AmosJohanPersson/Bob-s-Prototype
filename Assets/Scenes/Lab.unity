@@ -4204,6 +4204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8b849204f06dd064d8112544b489915f,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b849204f06dd064d8112544b489915f,
+        type: 3}
       propertyPath: m_TagString
       value: Grabbable
       objectReference: {fileID: 0}
@@ -4234,7 +4239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 0.04
   goalObject: {fileID: 1329404981}
   tolerance: 0
 --- !u!65 &860154656
@@ -4266,6 +4271,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &860154658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860154654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOnHeld: {x: 0.1, y: 130, z: 0.1}
+  rotationOnDown: {x: 0.1, y: 130, z: 0}
 --- !u!1001 &946423214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5515,6 +5534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e4bd7e249e6a76e4aa08db34f4deb01e,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e4bd7e249e6a76e4aa08db34f4deb01e,
+        type: 3}
       propertyPath: m_TagString
       value: Grabbable
       objectReference: {fileID: 0}
@@ -5577,6 +5601,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1082863791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082863785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOnHeld: {x: 0.1, y: 0.1, z: 0.1}
+  rotationOnDown: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!1 &1083461874
 GameObject:
   m_ObjectHideFlags: 0

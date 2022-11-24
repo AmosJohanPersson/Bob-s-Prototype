@@ -21,6 +21,8 @@ public class ObjectBehaviour : MonoBehaviour
     private Rigidbody rigid;
     private ObjectInteractionState state;
     private Quaternion originRotation;
+    private Transform originParent;
+    private RotationOnPickup rotationScript;
 
     private void Start()
     {
@@ -28,7 +30,8 @@ public class ObjectBehaviour : MonoBehaviour
         state = ObjectInteractionState.put;
         moveTarget = transform;
         originRotation = transform.rotation;
-
+        rotationScript = GetComponent<RotationOnPickup>();
+        originParent = transform.parent;
     }
 
     private void Update()
@@ -47,6 +50,8 @@ public class ObjectBehaviour : MonoBehaviour
                 {
                     state = ObjectInteractionState.held;
                     transform.parent = moveTarget;
+                    DeskManager.UpdateTask();
+                    if (rotationScript != null) rotationScript.PickupRotation();
                 }
                 break;
             case ObjectInteractionState.held:
@@ -56,7 +61,14 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
                     state = ObjectInteractionState.put;
-                    transform.rotation = originRotation;
+                    if (rotationScript == null)
+                    {
+                        transform.rotation = originRotation;
+                    }
+                    else
+                    {
+                        rotationScript.PutDownRotation();
+                    }
                     DeskManager.UpdateTask();
                 }
                 break;
@@ -91,7 +103,7 @@ public class ObjectBehaviour : MonoBehaviour
             
             target.Translate(new Vector3(0, heightAdjustment.y + offset, 0));
             state = ObjectInteractionState.down;
-            transform.parent = null;
+            transform.parent = originParent;
             moveTarget = target;
             ShowGoal(false);
         }

@@ -44,7 +44,6 @@ public class GrabBehaviour : MonoBehaviour
             {
                 Vector3 random2DOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
                 position += random2DOffset * randomOffsetMagnitude;
-                Debug.Log(random2DOffset);
             }
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
