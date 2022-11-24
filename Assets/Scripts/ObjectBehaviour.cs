@@ -10,6 +10,8 @@ enum ObjectInteractionState
 
 public class ObjectBehaviour : MonoBehaviour
 {
+    [Header("Height Offset")]
+    [SerializeField] float offset;
     [Header("Goal")]
     [SerializeField] GameObject goalObject;
     [Tooltip("Maximum snap-to distance. Not used if goal has a collider component.")]
@@ -86,7 +88,7 @@ public class ObjectBehaviour : MonoBehaviour
         {
             Bounds hitBox = GetComponent<Collider>().bounds;
             var heightAdjustment = transform.position - hitBox.ClosestPoint(transform.position - Vector3.up);
-            target.Translate(new Vector3(0, heightAdjustment.y, 0));
+            target.Translate(new Vector3(0, heightAdjustment.y + offset, 0));
             state = ObjectInteractionState.down;
             transform.parent = null;
             moveTarget = target;
