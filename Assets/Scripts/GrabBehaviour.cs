@@ -5,6 +5,7 @@ public class GrabBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject handPoint;
     [SerializeField] GameObject markerPrefab;
+    [SerializeField] float randomOffsetMagnitude;
 
     private Camera cam;
     private ObjectBehaviour carried;
@@ -39,10 +40,16 @@ public class GrabBehaviour : MonoBehaviour
                 position = carried.GetGoalPosition();
                 position.y = hit.point.y;
             }
+            else
+            {
+                Vector3 random2DOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
+                position += random2DOffset * randomOffsetMagnitude;
+                Debug.Log(random2DOffset);
+            }
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 2);
+            Destroy(destination, 2f);
         }
     }
 }

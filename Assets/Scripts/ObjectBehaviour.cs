@@ -88,6 +88,7 @@ public class ObjectBehaviour : MonoBehaviour
         {
             Bounds hitBox = GetComponent<Collider>().bounds;
             var heightAdjustment = transform.position - hitBox.ClosestPoint(transform.position - Vector3.up);
+            
             target.Translate(new Vector3(0, heightAdjustment.y + offset, 0));
             state = ObjectInteractionState.down;
             transform.parent = null;
