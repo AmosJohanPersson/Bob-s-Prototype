@@ -329,12 +329,12 @@ GameObject:
   - component: {fileID: 225966354}
   - component: {fileID: 225966353}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Narrative bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &225966352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 52}
-  m_SizeDelta: {x: 441.3623, y: 66.1713}
+  m_SizeDelta: {x: 337.0475, y: 50.2973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225966353
 MonoBehaviour:
@@ -706,7 +706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5.0000153}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 964, y: 237}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &485944610
@@ -1516,12 +1516,12 @@ GameObject:
   - component: {fileID: 1298643459}
   - component: {fileID: 1298643458}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Narrative text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1298643457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1539,8 +1539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.0000076294, y: 44}
-  m_SizeDelta: {x: 178.452, y: 30}
+  m_AnchoredPosition: {x: -0.000010967, y: 52}
+  m_SizeDelta: {x: 217.5849, y: 16.7447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298643458
 MonoBehaviour:
@@ -1564,12 +1564,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1df7478ef6b501f4f843af81e3cdcd24, type: 3}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
