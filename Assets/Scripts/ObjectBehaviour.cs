@@ -22,7 +22,7 @@ public class ObjectBehaviour : MonoBehaviour
     private ObjectInteractionState state;
     private Quaternion originRotation;
     private Transform originParent;
-    private RotationOnPickup rotationScript;
+    private CustomPickupBehaviour pickupScript;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class ObjectBehaviour : MonoBehaviour
         state = ObjectInteractionState.put;
         moveTarget = transform;
         originRotation = transform.rotation;
-        rotationScript = GetComponent<RotationOnPickup>();
+        pickupScript = GetComponent<CustomPickupBehaviour>();
         originParent = transform.parent;
     }
 
@@ -51,7 +51,7 @@ public class ObjectBehaviour : MonoBehaviour
                     state = ObjectInteractionState.held;
                     transform.parent = moveTarget;
                     DeskManager.UpdateTask();
-                    if (rotationScript != null) rotationScript.PickupRotation();
+                    if (pickupScript != null) pickupScript.OnPickup();
                 }
                 break;
             case ObjectInteractionState.held:
@@ -61,13 +61,13 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
                     state = ObjectInteractionState.put;
-                    if (rotationScript == null)
+                    if (pickupScript == null)
                     {
                         transform.rotation = originRotation;
                     }
                     else
                     {
-                        rotationScript.PutDownRotation();
+                        pickupScript.OnPutDown();
                     }
                     DeskManager.UpdateTask();
                 }

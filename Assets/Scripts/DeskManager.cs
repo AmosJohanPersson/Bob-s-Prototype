@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,5 +43,11 @@ public class DeskManager : MonoBehaviour
             Debug.Log("You did it!");
         }
         DM.UI.UpdateUI(correct, DM.objectives.Count);
+    }
+
+    public static UIHandler GetUI()
+    {
+        DeskManager DM = GetInstance();
+        return DM.UI;
     }
 }
