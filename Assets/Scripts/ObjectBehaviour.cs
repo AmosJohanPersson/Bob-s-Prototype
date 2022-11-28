@@ -23,6 +23,7 @@ public class ObjectBehaviour : MonoBehaviour
     private Quaternion originRotation;
     private Transform originParent;
     private CustomPickupBehaviour pickupScript;
+    private float heightAdjustment;
 
     private void Start()
     {
@@ -32,8 +33,18 @@ public class ObjectBehaviour : MonoBehaviour
         originRotation = transform.rotation;
         pickupScript = GetComponent<CustomPickupBehaviour>();
         originParent = transform.parent;
+
+        CalculateHeightAdjustment();
     }
 
+
+    private void CalculateHeightAdjustment()
+    {
+        Bounds hitBox = GetComponent<Collider>().bounds;
+        Ray downward = new Ray(hitBox.center, Vector3.down);
+        hitBox.IntersectRay(downward, out heightAdjustment);
+        heightAdjustment = Mathf.Abs(heightAdjustment);
+    }
     private void Update()
     {
         HandleMovement();
@@ -98,13 +109,12 @@ public class ObjectBehaviour : MonoBehaviour
     {
         if (state == ObjectInteractionState.held)
         {
-            Bounds hitBox = GetComponent<Collider>().bounds;
-            var heightAdjustment = transform.position - hitBox.ClosestPoint(transform.position - Vector3.up);
-            
-            target.Translate(new Vector3(0, heightAdjustment.y + offset, 0));
+            target.Translate(new Vector3(0, heightAdjustment + offset, 0));
             state = ObjectInteractionState.down;
             transform.parent = originParent;
             moveTarget = target;
+            Debug.Log(target.position.y);
+            Debug.Log(heightAdjustment);
             ShowGoal(false);
         }
     }
@@ -127,7 +137,7 @@ public class ObjectBehaviour : MonoBehaviour
     private void ShowGoal(bool show)
     {
         if (goalObject == null) return;
-        var particles = goalObject.GetComponent<ParticleSystem>();
+        var particles = goalObject.GetComponentInChildren<ParticleSystem>();
         if (particles == null) return;
 
         if(show)

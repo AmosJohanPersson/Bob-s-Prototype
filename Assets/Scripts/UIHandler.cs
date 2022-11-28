@@ -17,6 +17,13 @@ public class UIHandler : MonoBehaviour
 
     private float curDuration;
 
+    private void Start()
+    {
+        messageQueue = new Queue<string>();
+        durationQueue = new Queue<float>();
+        curDuration = 0;
+    }
+
     private void Update()
     {
         TickQueue();
@@ -31,7 +38,7 @@ public class UIHandler : MonoBehaviour
         }
     }
 
-    public void QueueNarrative(string message, float duration = 3f)
+    public void QueueNarrative(string message, float duration = 8f)
     {
         messageQueue.Enqueue(message);
         durationQueue.Enqueue(duration);
@@ -40,9 +47,12 @@ public class UIHandler : MonoBehaviour
     public void TickQueue()
     {
         timeCounter += Time.deltaTime;
+
         if (timeCounter >= curDuration)
         {
             HideMessage();
+            timeCounter = 0;
+
             string newMessage;
             float newDuration;
             if (messageQueue.TryDequeue(out newMessage))
@@ -60,7 +70,6 @@ public class UIHandler : MonoBehaviour
 
     public void DisplayMessage(string message)
     {
-        HideMessage();
         narrativeMessagebox.text = message;
         narrativeBackground.SetActive(true);
         narrativeMessagebox.gameObject.SetActive(true);

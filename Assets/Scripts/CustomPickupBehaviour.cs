@@ -10,7 +10,9 @@ public class CustomPickupBehaviour : MonoBehaviour
     public virtual void OnPickup()
     {
         if (text != null)
+        {
             SendNarrative();
+        }
 
         if (rotationOnHeld != Vector3.zero)
             transform.rotation = Quaternion.Euler(rotationOnHeld.x, rotationOnHeld.y, rotationOnHeld.z);

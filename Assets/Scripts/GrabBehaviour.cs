@@ -25,7 +25,7 @@ public class GrabBehaviour : MonoBehaviour
 
         bool didHit = Physics.Raycast(ray, out hit);
         GameObject other = didHit ? hit.collider.gameObject : null;
-
+        
         if (didHit && other.CompareTag("Grabbable") && !isCarrying)
         {
             carried = other.GetComponent<ObjectBehaviour>();
@@ -38,17 +38,18 @@ public class GrabBehaviour : MonoBehaviour
             if (carried.IsPointCloseToGoal(position)) 
             {
                 position = carried.GetGoalPosition();
-                position.y = hit.point.y;
             }
             else
             {
                 Vector3 random2DOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
                 position += random2DOffset * randomOffsetMagnitude;
             }
+            position.y = other.GetComponent<SurfaceHeight>().GetBestHeight(position);
+            Debug.Log(position.y);
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 2f);
+            Destroy(destination, 10f);
         }
     }
 }
