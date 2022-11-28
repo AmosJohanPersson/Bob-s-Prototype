@@ -44,7 +44,9 @@ public class GrabBehaviour : MonoBehaviour
                 Vector3 random2DOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
                 position += random2DOffset * randomOffsetMagnitude;
             }
-            position.y = other.GetComponent<SurfaceHeight>().GetBestHeight(position);
+            SurfaceHeight deskHeight = other.GetComponent<SurfaceHeight>();
+            if (deskHeight != null)
+                position.y = deskHeight.GetBestHeight(position);
             Debug.Log(position.y);
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);

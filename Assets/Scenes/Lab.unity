@@ -5144,6 +5144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -16863,7 +16868,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567666267}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08603, y: 0.087912895, z: 0.0955069}
@@ -16968,6 +16973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -17664,7 +17674,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672197002}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.102602266, y: 0.032860104, z: 0.3296182}
@@ -27864,7 +27874,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810983660}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.17411806
@@ -27902,6 +27912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -33068,7 +33083,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860154654}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.12386237, y: 0.06170059, z: 0.029718453}
@@ -38147,7 +38162,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957891338}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0572518, y: 0.15558204, z: 0.08780454}
@@ -38838,6 +38853,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -39285,7 +39305,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082863785}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.10465391, y: 0.16804008, z: 0.10465454}
@@ -39683,7 +39703,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173519573}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.17411806
@@ -39813,6 +39833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -40274,6 +40299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -41345,6 +41375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -42081,17 +42116,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.651
+      value: -0.6512
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00019991398
+      value: 0.0351
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.436
+      value: -0.4257
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
@@ -42181,7 +42216,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470607373}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.17411816
@@ -42316,6 +42351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -42506,6 +42546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -42602,6 +42647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -47795,7 +47845,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581508353}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08939288, y: 0.15817302, z: 0.09331234}
@@ -47883,6 +47933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -48064,6 +48119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -48206,6 +48266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -48629,6 +48694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
@@ -54479,6 +54549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -55273,7 +55348,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001210415}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.080358475, y: 0.044016663, z: 0.2854861}
@@ -55649,7 +55724,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2035054435}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -55991,7 +56066,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070990866}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.19375794, y: 0.08715436, z: 0.34270254}
@@ -56224,7 +56299,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075083834}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.43547246, y: 0.033083342, z: 0.43547246}
@@ -56505,6 +56580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209096844849165475, guid: a0728d52c79477d4796ea3b57f6cc7d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
       objectReference: {fileID: 0}
     - target: {fileID: 3209096844849165503, guid: a0728d52c79477d4796ea3b57f6cc7d2,
         type: 3}
