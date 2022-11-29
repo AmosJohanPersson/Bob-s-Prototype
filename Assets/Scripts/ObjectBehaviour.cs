@@ -48,7 +48,6 @@ public class ObjectBehaviour : MonoBehaviour
     private void Update()
     {
         HandleMovement();
-        
     }
 
     private void HandleMovement()
@@ -60,9 +59,9 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
                     state = ObjectInteractionState.held;
-                    transform.parent = moveTarget;
                     DeskManager.UpdateTask();
                     if (pickupScript != null) pickupScript.OnPickup();
+                    transform.parent = moveTarget;
                 }
                 break;
             case ObjectInteractionState.held:
@@ -71,6 +70,7 @@ public class ObjectBehaviour : MonoBehaviour
                 rigid.MovePosition(moveTarget.position);
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
+                    transform.parent = originParent;
                     state = ObjectInteractionState.put;
                     if (pickupScript == null)
                     {
@@ -78,7 +78,7 @@ public class ObjectBehaviour : MonoBehaviour
                     }
                     else
                     {
-                        pickupScript.OnPutDown();
+                        pickupScript.OnPutDown(IsPointCloseToGoal(transform.position));
                     }
                     DeskManager.UpdateTask();
                 }
@@ -111,10 +111,7 @@ public class ObjectBehaviour : MonoBehaviour
         {
             target.Translate(new Vector3(0, heightAdjustment + offset, 0));
             state = ObjectInteractionState.down;
-            transform.parent = originParent;
             moveTarget = target;
-            Debug.Log(target.position.y);
-            Debug.Log(heightAdjustment);
             ShowGoal(false);
         }
     }

@@ -17695,6 +17695,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &672197008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672197002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detritus: {fileID: 1734957670}
+  rotationOnHeld: {x: 0, y: 0, z: 0}
+  rotationOnDown: {x: 0, y: 0, z: 0}
+  rotationOnGoal: {x: 0, y: 0, z: 0}
+  text: 
+  textDuration: 0
 --- !u!1 &706918539
 GameObject:
   m_ObjectHideFlags: 0
@@ -33113,13 +33131,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 860154654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
+  m_Script: {fileID: 11500000, guid: 68f2bcae986f5c2439354db97644c224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOnHeld: {x: 0.1, y: 0.1, z: 0.1}
-  rotationOnDown: {x: 0.1, y: 0.1, z: 0}
+  detritus: {fileID: 0}
+  rotationOnHeld: {x: 0, y: 0, z: 0}
+  rotationOnDown: {x: 0, y: 0, z: 0}
+  rotationOnGoal: {x: 0, y: 0, z: 0}
   text: Would be a shame to break it
-  textDuration: 15
+  textDuration: 8
+  cam: {fileID: 101734130}
+  cameraLookAtAdjustment: {x: 0, y: 0.3, z: 0}
 --- !u!1 &862142457
 GameObject:
   m_ObjectHideFlags: 0
@@ -39205,7 +39227,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e4bd7e249e6a76e4aa08db34f4deb01e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.322321
+      value: 0.326
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4bd7e249e6a76e4aa08db34f4deb01e,
         type: 3}
@@ -39294,7 +39316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -0.008
+  offset: -0.006
   goalObject: {fileID: 1616671551}
   tolerance: 0
 --- !u!65 &1082863787
@@ -39338,8 +39360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOnHeld: {x: 0, y: 0, z: 0}
-  rotationOnDown: {x: 0, y: 0, z: 0}
+  detritus: {fileID: 2017934719}
+  rotationOnHeld: {x: 0.1, y: 0, z: 0}
+  rotationOnDown: {x: 0.1, y: 0, z: 0}
+  rotationOnGoal: {x: 0, y: 231, z: -90}
   text: 
   textDuration: 0
 --- !u!1 &1083461874
@@ -48657,6 +48681,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5efa229a66980754c9c0fedce36687ec,
     type: 3}
   m_PrefabInstance: {fileID: 1725747276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1734957670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1969c0d36bed6b42a8f70245e407967,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998139809}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744352098 stripped
 GameObject:

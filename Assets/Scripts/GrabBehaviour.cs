@@ -47,11 +47,10 @@ public class GrabBehaviour : MonoBehaviour
             SurfaceHeight deskHeight = other.GetComponent<SurfaceHeight>();
             if (deskHeight != null)
                 position.y = deskHeight.GetBestHeight(position);
-            Debug.Log(position.y);
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 10f);
+            Destroy(destination, 15f);
         }
     }
 }
