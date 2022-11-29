@@ -6,6 +6,7 @@ public class GrabBehaviour : MonoBehaviour
     [SerializeField] GameObject handPoint;
     [SerializeField] GameObject markerPrefab;
     [SerializeField] float randomOffsetMagnitude;
+    [SerializeField] float maxInteractDistance;
 
     private Camera cam;
     private ObjectBehaviour carried;
@@ -25,8 +26,10 @@ public class GrabBehaviour : MonoBehaviour
 
         bool didHit = Physics.Raycast(ray, out hit);
         GameObject other = didHit ? hit.collider.gameObject : null;
-        
-        if (didHit && other.CompareTag("Grabbable") && !isCarrying)
+
+        if (didHit && Vector3.Distance(transform.position, hit.point) > maxInteractDistance)
+            return;
+        else if (didHit && other.CompareTag("Grabbable") && !isCarrying)
         {
             carried = other.GetComponent<ObjectBehaviour>();
             carried.PickUp(handPoint.transform);
@@ -50,7 +53,11 @@ public class GrabBehaviour : MonoBehaviour
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 15f);
+            Destroy(destination, 2f);
         }
+    }
+    public void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject);
     }
 }
