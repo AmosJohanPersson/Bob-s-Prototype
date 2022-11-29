@@ -21,6 +21,7 @@ public class CameraBehaviour : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         cam = Camera.main;
     }
     void Update()

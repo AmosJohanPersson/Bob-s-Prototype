@@ -50,7 +50,11 @@ public class GrabBehaviour : MonoBehaviour
             GameObject destination = Instantiate(markerPrefab, position, Quaternion.identity);
             carried.PutDown(destination.transform);
             isCarrying = false;
-            Destroy(destination, 15f);
+            Destroy(destination, 2f);
         }
+    }
+    public void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject);
     }
 }

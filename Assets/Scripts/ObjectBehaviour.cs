@@ -45,7 +45,8 @@ public class ObjectBehaviour : MonoBehaviour
         hitBox.IntersectRay(downward, out heightAdjustment);
         heightAdjustment = Mathf.Abs(heightAdjustment);
     }
-    private void Update()
+
+    private void FixedUpdate()
     {
         HandleMovement();
     }
@@ -59,9 +60,9 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
                     state = ObjectInteractionState.held;
-                    DeskManager.UpdateTask();
                     if (pickupScript != null) pickupScript.OnPickup();
                     transform.parent = moveTarget;
+                    DeskManager.UpdateTask();
                 }
                 break;
             case ObjectInteractionState.held:
@@ -70,7 +71,6 @@ public class ObjectBehaviour : MonoBehaviour
                 rigid.MovePosition(moveTarget.position);
                 if (Vector3.Distance(transform.position, moveTarget.position) < 0.05)
                 {
-                    transform.parent = originParent;
                     state = ObjectInteractionState.put;
                     if (pickupScript == null)
                     {
@@ -97,21 +97,27 @@ public class ObjectBehaviour : MonoBehaviour
 
     public void PickUp(Transform target)
     {
+        Debug.Log(target);
         if (state == ObjectInteractionState.put)
         {
             state = ObjectInteractionState.up;
             moveTarget = target;
+            Debug.Log(target.position);
             ShowGoal(true);
         }
     }
 
     public void PutDown(Transform target)
     {
+        Debug.Log(target);
+        Debug.Log(target.position);
         if (state == ObjectInteractionState.held)
         {
+            Debug.Log("Placing");
             target.Translate(new Vector3(0, heightAdjustment + offset, 0));
             state = ObjectInteractionState.down;
             moveTarget = target;
+            transform.parent = originParent;
             ShowGoal(false);
         }
     }
@@ -146,6 +152,7 @@ public class ObjectBehaviour : MonoBehaviour
             particles.Stop();
         }
     }
+
     public bool InCorrectSpot()
     {
         return IsPointCloseToGoal(transform.position);
@@ -155,4 +162,5 @@ public class ObjectBehaviour : MonoBehaviour
     {
         return goalObject.transform.position;
     }
+
 }

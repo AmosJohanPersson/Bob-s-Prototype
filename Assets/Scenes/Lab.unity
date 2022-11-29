@@ -10371,7 +10371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169592997}
   m_LocalRotation: {x: -0.25953606, y: 0.6577546, z: 0.6577546, w: 0.25953606}
-  m_LocalPosition: {x: 0.18260433, y: 0.03227673, z: 0.074297465}
+  m_LocalPosition: {x: 0.179, y: 0.03227673, z: 0.056}
   m_LocalScale: {x: 0.204606, y: 0.20891406, z: 0.2445031}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27792,17 +27792,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4798
+      value: -0.4808
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.649
+      value: 0.6492
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.7137
+      value: -0.7136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73396cb54da8d114fa9d72257157681c,
         type: 3}
@@ -39316,7 +39316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e530a0915db6224409e28ab90b10c7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -0.006
+  offset: -0.01
   goalObject: {fileID: 1616671551}
   tolerance: 0
 --- !u!65 &1082863787
@@ -39363,7 +39363,7 @@ MonoBehaviour:
   detritus: {fileID: 2017934719}
   rotationOnHeld: {x: 0.1, y: 0, z: 0}
   rotationOnDown: {x: 0.1, y: 0, z: 0}
-  rotationOnGoal: {x: 0, y: 231, z: -90}
+  rotationOnGoal: {x: 0, y: -40, z: -90}
   text: 
   textDuration: 0
 --- !u!1 &1083461874
