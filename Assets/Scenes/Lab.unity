@@ -55636,6 +55636,7 @@ MonoBehaviour:
   markerPrefab: {fileID: 404133705614199869, guid: 215500229aaa06a4194644dec69560d7,
     type: 3}
   randomOffsetMagnitude: 0.02
+  maxInteractDistance: 1.5
 --- !u!114 &2035054438
 MonoBehaviour:
   m_ObjectHideFlags: 0
