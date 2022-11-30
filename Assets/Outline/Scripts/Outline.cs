@@ -111,18 +111,18 @@ public class Outline : MonoBehaviour {
         Physics.Raycast(ray, out hit);
 
         if (player.IsInInteractRange(hit.point) && !player.IsCarrying()){
-        foreach (var renderer in renderers)
-        {
+            foreach (var renderer in renderers)
+            {
 
-            // Append outline shaders
-            var materials = renderer.sharedMaterials.ToList();
+                // Append outline shaders
+                var materials = renderer.sharedMaterials.ToList();
 
-            materials.Add(outlineMaskMaterial);
-            materials.Add(outlineFillMaterial);
+                materials.Add(outlineMaskMaterial);
+                materials.Add(outlineFillMaterial);
 
-            renderer.materials = materials.ToArray();
+                renderer.materials = materials.ToArray();
+            }
         }
-    }
     
   }
 

@@ -15705,6 +15705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nightstand (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3932689981853941460, guid: 8ac6159b9e71aa64681b01a023c95ac8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Surface
+      objectReference: {fileID: 0}
     - target: {fileID: 4769849378435321545, guid: 8ac6159b9e71aa64681b01a023c95ac8,
         type: 3}
       propertyPath: m_RootOrder
@@ -15938,6 +15943,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 255973583}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &258316315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3932689981853941460, guid: 8ac6159b9e71aa64681b01a023c95ac8,
+    type: 3}
+  m_PrefabInstance: {fileID: 248225614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &258316319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258316315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a781cec0f4c0fa64eac4ab2ff1bd31fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceHeight:
+  - 0.5558
 --- !u!1001 &283928040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16161,8 +16186,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.5836636}
+  m_Center: {x: 0, y: 0, z: -0.29183185}
 --- !u!1001 &319107865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33046,17 +33071,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8b849204f06dd064d8112544b489915f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11143494
+      value: -0.1515
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b849204f06dd064d8112544b489915f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.311921
+      value: -0.3169
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b849204f06dd064d8112544b489915f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.54139686
+      value: 1.216
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b849204f06dd064d8112544b489915f,
         type: 3}
@@ -33197,9 +33222,9 @@ MonoBehaviour:
   detritus: {fileID: 0}
   rotationOnHeld: {x: 0, y: 0, z: 0}
   rotationOnDown: {x: 0, y: 0, z: 0}
-  rotationOnGoal: {x: 0, y: 0, z: 0}
+  rotationOnGoal: {x: 0, y: 235.593, z: 0}
   text: Would be a shame to break it
-  textDuration: 8
+  textDuration: 6
   cam: {fileID: 101734130}
   cameraLookAtAdjustment: {x: 0, y: 0.3, z: 0}
 --- !u!114 &860154659
@@ -39464,8 +39489,8 @@ MonoBehaviour:
   rotationOnHeld: {x: 0.1, y: 0, z: 0}
   rotationOnDown: {x: 0.1, y: 0, z: 0}
   rotationOnGoal: {x: 0, y: -40, z: -90}
-  text: 
-  textDuration: 0
+  text: "These clearly didn\u2019t help"
+  textDuration: 6
 --- !u!114 &1082863794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48451,8 +48476,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.6916608}
+  m_Center: {x: 0, y: 0, z: -0.34583056}
 --- !u!1001 &1659101371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56338,6 +56363,24 @@ MonoBehaviour:
   bakeValues: []
   player: {fileID: 2035054437}
   cam: {fileID: 101734130}
+--- !u!114 &2070990875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070990866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877ed09598a49b4db3515a41111000c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detritus: {fileID: 0}
+  rotationOnHeld: {x: 0, y: 0, z: 0}
+  rotationOnDown: {x: 0, y: 0, z: 0}
+  rotationOnGoal: {x: 0, y: 0, z: 0}
+  text: Debra always made better ones
+  textDuration: 6
 --- !u!1001 &2075046050
 PrefabInstance:
   m_ObjectHideFlags: 0
