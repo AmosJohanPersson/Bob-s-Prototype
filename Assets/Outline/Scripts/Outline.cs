@@ -80,7 +80,12 @@ public class Outline : MonoBehaviour {
 
   private bool needsUpdate;
 
-  void Awake() {
+  [SerializeField]
+  private GrabBehaviour player;
+  [SerializeField]
+  private Camera cam;
+
+    void Awake() {
 
     // Cache renderers
     renderers = GetComponentsInChildren<Renderer>();
@@ -100,16 +105,25 @@ public class Outline : MonoBehaviour {
   }
 
   void OnMouseEnter() {
-    foreach (var renderer in renderers) {
+        Vector3 lookingPoint = new Vector3(0.5f, 0.5f, 0f);
+        Ray ray = cam.ViewportPointToRay(lookingPoint);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
 
-      // Append outline shaders
-      var materials = renderer.sharedMaterials.ToList();
+        if (player.IsInInteractRange(hit.point) && !player.IsCarrying()){
+        foreach (var renderer in renderers)
+        {
 
-      materials.Add(outlineMaskMaterial);
-      materials.Add(outlineFillMaterial);
+            // Append outline shaders
+            var materials = renderer.sharedMaterials.ToList();
 
-      renderer.materials = materials.ToArray();
+            materials.Add(outlineMaskMaterial);
+            materials.Add(outlineFillMaterial);
+
+            renderer.materials = materials.ToArray();
+        }
     }
+    
   }
 
   void OnValidate() {
