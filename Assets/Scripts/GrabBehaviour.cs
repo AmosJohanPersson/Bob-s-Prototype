@@ -18,6 +18,16 @@ public class GrabBehaviour : MonoBehaviour
         isCarrying = false;
     }
 
+    public bool IsCarrying()
+    {
+        return isCarrying;
+    }
+
+    public bool IsInInteractRange(Vector3 point)
+    {
+        return Vector3.Distance(transform.position, point) < maxInteractDistance;
+    }
+
     private void OnFire(InputValue input)
     {
         Vector3 lookingPoint = new Vector3(0.5f, 0.5f, 0f);
@@ -27,7 +37,7 @@ public class GrabBehaviour : MonoBehaviour
         bool didHit = Physics.Raycast(ray, out hit);
         GameObject other = didHit ? hit.collider.gameObject : null;
 
-        if (didHit && Vector3.Distance(transform.position, hit.point) > maxInteractDistance)
+        if (didHit && !IsInInteractRange(hit.point))
             return;
         else if (didHit && other.CompareTag("Grabbable") && !isCarrying)
         {
@@ -55,9 +65,5 @@ public class GrabBehaviour : MonoBehaviour
             isCarrying = false;
             Destroy(destination, 2f);
         }
-    }
-    public void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(other.gameObject);
     }
 }
