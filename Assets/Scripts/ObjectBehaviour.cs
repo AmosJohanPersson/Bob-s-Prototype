@@ -97,23 +97,18 @@ public class ObjectBehaviour : MonoBehaviour
 
     public void PickUp(Transform target)
     {
-        Debug.Log(target);
         if (state == ObjectInteractionState.put)
         {
             state = ObjectInteractionState.up;
             moveTarget = target;
-            Debug.Log(target.position);
             ShowGoal(true);
         }
     }
 
     public void PutDown(Transform target)
     {
-        Debug.Log(target);
-        Debug.Log(target.position);
         if (state == ObjectInteractionState.held)
         {
-            Debug.Log("Placing");
             target.Translate(new Vector3(0, heightAdjustment + offset, 0));
             state = ObjectInteractionState.down;
             moveTarget = target;

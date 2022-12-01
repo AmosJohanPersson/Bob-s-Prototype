@@ -5,6 +5,7 @@ public class DeskManager : MonoBehaviour
 {
     [SerializeField] private List<ObjectBehaviour> objectives;
     [SerializeField] private UIHandler UI;
+    [SerializeField] private Bed bed;
 
     private static DeskManager instance;
 
@@ -40,7 +41,12 @@ public class DeskManager : MonoBehaviour
         }
         if (correct >= DM.objectives.Count)
         {
+            DM.bed.SetSleepEnabled(true);
             Debug.Log("You did it!");
+        }
+        else
+        {
+            DM.bed.SetSleepEnabled(false);
         }
         DM.UI.UpdateUI(correct, DM.objectives.Count);
     }

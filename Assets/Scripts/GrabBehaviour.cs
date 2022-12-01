@@ -37,7 +37,11 @@ public class GrabBehaviour : MonoBehaviour
         bool didHit = Physics.Raycast(ray, out hit);
         GameObject other = didHit ? hit.collider.gameObject : null;
 
-        if (didHit && !IsInInteractRange(hit.point))
+        if (didHit && other.CompareTag("Bed"))
+        {
+            other.GetComponent<Bed>().OnInteract();
+        }
+        else if(didHit && !IsInInteractRange(hit.point))
             return;
         else if (didHit && other.CompareTag("Grabbable") && !isCarrying)
         {

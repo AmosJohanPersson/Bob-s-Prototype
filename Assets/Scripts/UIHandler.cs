@@ -36,6 +36,10 @@ public class UIHandler : MonoBehaviour
         {
             goToBed.gameObject.SetActive(true);
         }
+        else
+        {
+            goToBed.gameObject.SetActive(false);
+        }
     }
 
     public void QueueNarrative(string message, float duration = 8f)
