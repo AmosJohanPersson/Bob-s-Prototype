@@ -15,8 +15,9 @@ public class Bed : MonoBehaviour
 
     private void LoadDay(int day)
     {
-        SceneManager.LoadSceneAsync(day);
+        SceneManager.LoadScene(day);
         currentDay = day;
+        GetComponent<BedOutline>().TurnOffOutline();
     }
 
     public void SetSleepEnabled(bool state)
@@ -28,14 +29,13 @@ public class Bed : MonoBehaviour
 
     public void OnInteract()
     {
-        Debug.Log(maySleep);
-        if (maySleep && currentDay + 1 < SceneManager.sceneCount) 
+        if (maySleep && currentDay + 1 < SceneManager.sceneCountInBuildSettings) 
         { 
             LoadDay(currentDay + 1); 
         }
         else if (maySleep)
         {
-            //end game
+            Application.Quit();
         }
     }
 }

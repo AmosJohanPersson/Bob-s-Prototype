@@ -160,6 +160,11 @@ public class BedOutline : MonoBehaviour
 
     void OnMouseExit()
     {
+        TurnOffOutline();
+    }
+
+    public void TurnOffOutline()
+    {
         foreach (var renderer in renderers)
         {
 

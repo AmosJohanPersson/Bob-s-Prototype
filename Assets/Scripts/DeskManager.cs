@@ -11,6 +11,7 @@ public class DeskManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("waking up") ;
         if (instance == null)
         {
             instance = this;
@@ -24,6 +25,12 @@ public class DeskManager : MonoBehaviour
     private void Start()
     {
         UI.UpdateUI(0, objectives.Count);
+
+        if (bed == null)
+        {
+            bed = GameObject.FindGameObjectWithTag("Bed").GetComponent<Bed>();
+            UpdateTask();
+        }
     }
 
     private static DeskManager GetInstance()
@@ -55,5 +62,11 @@ public class DeskManager : MonoBehaviour
     {
         DeskManager DM = GetInstance();
         return DM.UI;
+    }
+
+    public static void SetBed(Bed newBed)
+    {
+        DeskManager DM = GetInstance();
+        DM.bed = newBed;
     }
 }

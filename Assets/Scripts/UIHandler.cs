@@ -55,6 +55,7 @@ public class UIHandler : MonoBehaviour
         if (timeCounter >= curDuration)
         {
             HideMessage();
+            curDuration = 0;
             timeCounter = 0;
 
             string newMessage;
